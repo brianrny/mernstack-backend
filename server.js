@@ -1,24 +1,27 @@
+const initializeDbConnection = require("./app/database")
+
 const express = require("express")
 const cors = require("cors")
 const bodyParser = require("body-parser")
-const mongodb = require("./app/models")
+const path = require("path")
 
-const app = express();
+const mongoose = require("mongoose")
 
+const PORT = process.env.PORT || 8080
 const corsOptions = {
     origin: "http://localhost:8081"
 }
 
-const PORT = process.env.PORT || 8080
+initializeDbConnection()
 
 app.use(cors(corsOptions))
-
 app.use(bodyParser.json())
-
-app.get("/", (req, res) => {
-    res.json({ message: "IT IS WORKING!! " })
-})
 
 app.listen(PORT, () => {
     console.log("Listening on: " + PORT)
 })
+
+app.get("/", (req, res) => {
+    res.send({ message: "Werkend" })
+})
+
