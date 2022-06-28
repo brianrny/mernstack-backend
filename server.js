@@ -6,7 +6,7 @@ const bodyParser = require("body-parser")
 const path = require("path")
 
 const mongoose = require("mongoose")
-const { create, findAll } = require("./app/controllers/exercise.controller")
+const { create, findAll, findOneById, updateById, deleteById } = require("./app/controllers/exercise.controller")
 
 require("dotenv").config({
     path: path.resolve(__dirname + '/.env')
@@ -32,5 +32,8 @@ app.get("/", (req, res) => {
     res.send({ message: "Werkend" })
 })
 
-app.post("/api/exercises", create)
-app.get("/api/exercises", findAll)
+app.post("/api/exercise", create)
+app.get("/api/exercise", findAll)
+app.get("/api/exercise/:id", findOneById)
+app.put("/api/exercise/:id", updateById)
+app.delete("/api/exercise/:id", deleteById)
