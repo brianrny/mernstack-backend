@@ -22,7 +22,7 @@ const create = (req, res) => {
     })
 }
 
-const findAll = (res) => {
+const findAll = (req, res) => {
     const getAll = (err, docs) => {
         if (err) {
             console.error(err)

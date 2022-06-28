@@ -23,5 +23,4 @@ const Exercise = mongoose.model("exercises",
     })
 )
 
-
 module.exports = Exercise
