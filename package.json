@@ -4,8 +4,7 @@
   "description": "Fitness app backend",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "author": "Brian Ratnayati",
   "license": "ISC",
@@ -14,6 +13,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.4.0"
+    "mongoose": "^6.4.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
   }
 }
